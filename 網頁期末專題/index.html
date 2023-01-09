@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>calories</title>
+    <style type="text/css">
+        @import url(style.css);
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" herf="style.css"> -->
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <b></b>
+                <b></b>
+                <a href="index.html">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">首頁</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="breakfast.html">
+                    <span class="icon"><ion-icon name="fast-food-outline"></ion-icon></ion-icon></span>
+                    <span class="title">早餐類</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="dinner.html">
+                    <span class="icon"><ion-icon name="fast-food-outline"></ion-icon></ion-icon></span>
+                    <span class="title">午晚餐類</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="midnight.html">
+                    <span class="icon"><ion-icon name="beer-outline"></ion-icon></span>
+                    <span class="title">宵夜類</span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="calculator.html">
+                    <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
+                    <span class="title">計算機</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="c">
+        <font size="22" class="cal" color="#e71d36"><b>calories!!!</b></font><br>
+        <font size="6" class="search"><ion-icon name="play-outline"></ion-icon><b>search<br>
+            <ion-icon name="play-outline"></ion-icon>calculate<br>
+            <ion-icon name="play-outline"></ion-icon>Information</b></font><br>
+        <img class="hi" src="OIP.jpg">
+        
+        
+       
+    </div>
+
+    <div class="toggle">
+        <ion-icon name="grid-outline" class="open"></ion-icon>
+        <ion-icon name="log-out-outline" class="close"></ion-icon>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+
+        let menuToggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        menuToggle.onclick=function(){
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+        let list =document.querySelectorAll('.list');
+        for(let i=0;i<list.length;i++){
+            list[i].onclick=function(){
+                let j=0;
+                while(j<list.length){
+                    list[j++].className='list';
+                }
+                list[i].className='list active';
+            }
+        }
+    </script>
+</body>
+</html>
