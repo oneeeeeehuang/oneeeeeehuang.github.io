@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>calories</title>
+    <style type="text/css">
+        @import url(style.css);
+    </style>
+    <script src="a.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" herf="style.css"> -->
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="index.html">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title"><b>首頁</b></span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="breakfast.html">
+                    <span class="icon"><ion-icon name="fast-food-outline"></ion-icon></ion-icon></span>
+                    <span class="title"><b>早餐類</b></span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="dinner.html">
+                    <span class="icon"><ion-icon name="fast-food-outline"></ion-icon></ion-icon></span>
+                    <span class="title"><b>午晚餐類</b></span>
+                </a>
+            </li>
+            <li class="list">
+                <b></b>
+                <b></b>
+                <a href="midnight.html">
+                    <span class="icon"><ion-icon name="beer-outline"></ion-icon></span>
+                    <span class="title"><b>宵夜類</b></span>
+                </a>
+            </li>
+            <li class="list active">
+                <b></b>
+                <b></b>
+                <a href="calculator.html">
+                    <span class="icon"><ion-icon name="calculator-outline"></ion-icon></span>
+                    <span class="title"><b>計算機</b></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="c">
+        <div class="data">
+            <form><font size="5">
+                年齡:<input type="text" id="age"/><br>
+                身高:<input type="text" id="height"/><br>
+                體重:<input type="text" id="weight"/><br>
+                <input type="button" onclick="boy()" value="boy" />
+                <input type="button" onclick="girl()" value="girl" />
+            </form>
+            <p>
+                <br>TDEE<br>
+                完全沒運動  <span id="noexport"></span><br>
+                每周1~3天   <span id="some"></span><br>
+                每周3~5天   <span id="always"></span><br>
+            </p>
+        </div>
+        <div class="foodlist">
+            <form>
+            foooooood<br>
+            list 1: <input type="text" id="one"/>
+            list 2: <input type="text" id="two"/>
+            list 3: <input type="text" id="three"/><br/>
+            list 4: <input type="text" id="four"/>
+            list 5: <input type="text" id="five"/>
+            list 6: <input type="text" id="six"/><br/>
+            list 7: <input type="text" id="seven"/>
+            list 8: <input type="text" id="eight"/>
+            list 9: <input type="text" id="nine"/>
+            <br/>
+            <input type="button" onclick="total()" value="calculator" />
+            </form>
+            <p>
+                total calories<br><span id="t"></span>
+            </p>
+        </div>
+        <div>
+            <input type="button" onclick="range()" value="warn" class="picture"/>
+            <span id="output" class="picture"></span></font>
+        </div>
+        
+    </div>
+
+    <div class="toggle">
+        <ion-icon name="grid-outline" class="open"></ion-icon>
+        <ion-icon name="log-out-outline" class="close"></ion-icon>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+
+        let menuToggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        menuToggle.onclick=function(){
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+
+        let list =document.querySelectorAll('.list');
+        for(let i=0;i<list.length;i++){
+            list[i].onclick=function(){
+                let j=0;
+                while(j<list.length){
+                    list[j++].className='list';
+                }
+                list[i].className='list active';
+            }
+        }
+    </script>
+</body>
+</html>
